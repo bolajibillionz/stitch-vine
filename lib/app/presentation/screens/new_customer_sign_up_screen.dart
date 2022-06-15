@@ -132,9 +132,8 @@ class _NewCustomerSignUpScreenState extends State<NewCustomerSignUpScreen> {
               SizedBox(height: getProportionateScreenHeight(39.5)),
               TextField(
                 controller: _controller,
-                 keyboardType: TextInputType.none,
+                keyboardType: TextInputType.none,
                 decoration: InputDecoration(
-                 
                   contentPadding:
                       EdgeInsets.only(left: getProportionateScreenWidth(20)),
                   labelText: 'Gender',
@@ -142,8 +141,8 @@ class _NewCustomerSignUpScreenState extends State<NewCustomerSignUpScreen> {
                       fontSize: getProportionateScreenHeight(12),
                       fontFamily: 'Roboto',
                       fontWeight: FontWeight.w400,
-                      color:  Colors.black.withOpacity(0.6)),
-                  hintText: 'Gender',
+                      color: Colors.black.withOpacity(0.6)),
+                  hintText: '· Gender',
                   hintStyle: TextStyle(
                     color: Colors.black.withOpacity(0.87),
                     fontSize: getProportionateScreenWidth(16),
@@ -151,23 +150,20 @@ class _NewCustomerSignUpScreenState extends State<NewCustomerSignUpScreen> {
                     fontWeight: FontWeight.w400,
                   ),
                   enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-                color:  Colors.black.withOpacity(0.6),
-                width: 2),
-            borderRadius: BorderRadius.circular(10.0),
-          ),
-          floatingLabelStyle: TextStyle(
-            color: Colors.black,
-            fontSize: 18.0,
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-                color:  Colors.black.withOpacity(0.6),
-                width: 1.5),
-            borderRadius: BorderRadius.circular(10.0),
-          ),
+                    borderSide: BorderSide(
+                        color: Colors.black.withOpacity(0.6), width: 2),
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  floatingLabelStyle: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18.0,
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                        color: Colors.black.withOpacity(0.6), width: 1.5),
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
                   prefixIcon: PopupMenuButton<String>(
-                    
                     icon: const Icon(Icons.arrow_drop_down),
                     onSelected: (String value) {
                       _controller.text = value;
@@ -175,7 +171,7 @@ class _NewCustomerSignUpScreenState extends State<NewCustomerSignUpScreen> {
                     itemBuilder: (BuildContext context) {
                       return items.map<PopupMenuItem<String>>((String value) {
                         return new PopupMenuItem(
-                            child: new Text(value), value: value);
+                            child: new Text('· $value') , value: value);
                       }).toList();
                     },
                   ),
@@ -191,20 +187,19 @@ class _NewCustomerSignUpScreenState extends State<NewCustomerSignUpScreen> {
                   labeltext: 'Phone Number',
                   hinttext: '+234 813 631 6154',
                   isInput: false),
-                  SizedBox(height: getProportionateScreenHeight(38)),
-                  createButton(
-              context: context,
-              height: 48,
-              width: 303,
-              buttonColor: Palette.primaryColor,
-              nextPage: LogInScreen(),
-              buttonText: 'Next',
-              buttoTextSize: 16,
-              buttonTextfamily: 'Poppins-Medium',
-              buttonTextweight: FontWeight.w500,
-              buttonTextColor: Palette.whiteTextColor,
-              space: 0.06),
-                  
+              SizedBox(height: getProportionateScreenHeight(38)),
+              createButton(
+                  context: context,
+                  height: 48,
+                  width: 303,
+                  buttonColor: Palette.primaryColor,
+                  nextPage: LogInScreen(),
+                  buttonText: 'Next',
+                  buttoTextSize: 16,
+                  buttonTextfamily: 'Poppins-Medium',
+                  buttonTextweight: FontWeight.w500,
+                  buttonTextColor: Palette.whiteTextColor,
+                  space: 0.06),
             ],
           ),
         ),
